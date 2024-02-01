@@ -1,0 +1,107 @@
+자바스크립트 중급 1- 변수,호이스팅,TDZ(Temporal Dead Zone)
+
+변수 
+-----
+let const var 
+
+
+var 와 let 은 비슷하다 하지만
+var는 한번 선언된 변수를 다시 선언할 수 있다.
+```var name = 'Mike';
+console.log(name) // Mike
+var name = 'Jane';
+console.log(name); //Jane
+```
+
+let은 한번 선언된 변수를 다시 선언 할 수 없다.
+
+```
+let name = 'Mike';
+console.log(name) //Mike
+
+let name ='Jane'; //error!
+console.log(name) 
+```
+var은 선언하기 전에 사용할 수 있다.
+
+```
+var name; (이걸 바로 호이스팅(hoisting)) 
+console.log(name); // undefined ( 선언은 호스팅 되지만, 할당은 호이스팅이 되지 않기 때문에 undefined 가 뜸)
+name = 'Mike'; //할당
+```
+
+let 과 const 도 호이스팅이 된다.
+하지만 var 처럼 왜 되지 않을까 ? 그 이유는 TDZ ( Temporal Dead Zone ) 때문이다.
+let 과 const 는 TDZ의 영향을 받기 때문에 할당을 하기 전에는 사용할 수 없다.
+=> 코드를 예측가능하게 하고, 잠재적인 버그를 줄일 수 있다.
+
+console.log(name) // referenceError
+let name = 'Mike';
+
+
+호이스팅 이란 ? : 스코프 내부 어디서든 변수 선언은 최상위에 선언된 것 처럼 행동.
+
+
+let age = 30;
+funtion showAge(){
+  console.log(age);
+
+  let age = 20; -> 이 코드를 추가하면 문제가 발생한다.
+}
+showAge();
+
+
+변수의 생성과정
+1. 선언단계
+2. 초기화 단계
+3. 할당단계
+
+var 
+1. 선언 및 초기화 단계, 2. 할당 단계가 동시에 된다.
+초기화: undefined 를 할당 해주는 단계
+
+let
+1. 선언단계 2.초기화 단계 3. 할당 단계가 있을때 
+선언단계와 초기화 단계가 분리돼서 실행된다.
+호이스팅 되면서 선언단계가 이루어지지만 초기화 단계는 실제코드에 다다랐을때 이루어지기때문에 reference error 가 발생하는것이다.
+
+const 
+1. 선언 + 초기화 + 할당
+
+
+예시; 
+let name;
+name = "Mike";
+
+var age;
+age = 30;
+
+const gender;  < - 에러
+gender = "male" 
+
+
+var :  함수 스코프 (function-scoped)
+let, const : 블록 스코프 (block-scoped)
+함수, if문, for문, while문, try/catch 문 등
+블록 스코프는 모든 코드블록에서 선언된 변수는 코드 블록 내에서만 사용가능하다는것이다. 외부에서는 접근 할 수 없다는것이다.
+즉 코드 블록 내에서 선언된 변수는 지역변수라는것이다.
+여기서 코드블록은 함수, if문, for문, while문, try/catch 문 등 을 의미한다.
+
+반면 함수 스코프는 함수 내에서 할당된 변수만 지역변수가 되는것이다.
+
+
+
+스코프
+const age = 30;
+if(age >19) {
+var txt = '성인';  
+}
+               console.log(txt) //'성인' 
+if문 안에서 사용한 var은 if문 밖에서도 사용이 가능하다.
+
+하지만 let,const 는 if문 안에서 사용한 변수를 사용할 수 없다. 이것을 블록스코프라고 한다.
+  
+var도 함수스코프 안에서 사용되면 바깥에서 사용할 수 없다. 
+유일하게 벗어날 수 없는 스코프가 함수스코프이다.
+
+               
