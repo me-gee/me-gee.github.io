@@ -1,98 +1,114 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>김혜지 - Portfolio</title>
+    <meta property="og:type" content="Website">
+    <meta property="og:title" content="HyeJi's Portfolio">
+    <meta property="og:description" content="HyeJi's Portfolio">
+    <meta property="og:image" content="https://hyeji.dev/images/og-image.png">
+    <meta property="og:url" content="https://me-gee.github.io/landing">
+    <meta property="og:site_name" content="김혜지 | 2025 포트폴리오">
+    <!-- link -->
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&amp;family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- 부드러운 스크롤 효과 -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.22/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.14/lottie.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+
+    <title>HyeJi's Portfolio</title>
 </head>
 <body>
-    <div id="wrapper">
-        <!-- HEADER -->
-        <header id="header">
-            <div class="common-inner">
-                <div class="logo-area">
-                    <h1 class="logo">
-                        <a href="./index.html">
-                            <i class="ico-logo"></i>HYEJI Portfolio
-                        </a>
-                    </h1>
+    <header class="header">
+        <section class="sc-fixation">
+            <a href="https://github.com/me-gee" class="logo"><span>MEGEE</span></a>
+            <div class="group-producer">
+                <span class="blind">2024년 이해현 제작</span>
+                <span class="left">2024<sub>©</sub></span>
+                <span>—</span>
+                <span>Lee-HaeHyun All Rights Reserved</span>
+            </div>
+            <div class="time-area">
+                <div class="inner kor">
+                    <span class="blind">한국 현재 시간</span>
+                    <em>KOR</em>
+                    <div class="time" id="koTime">17:30:31</div>
+                    <span class="dot"><span class="dot-in"></span></span>
                 </div>
-                <nav id="gnb">
-                    <ul class="gnb-list">
-                        <li class="gnb-item" data-menu="about">
-                            <a href="#" class="btn-gnb" role="button">about</a>
-                        </li>
-                        <li class="gnb-item" data-menu="work">
-                            <a href="#" class="btn-gnb" role="button">contact</a>
-                        </li>
-                    </ul>
-                </nav>
+                <div class="inner nyc">
+                    <span class="blind">뉴욕 현재 시간</span>
+                    <em>NYC</em>
+                    <div class="time" id="nyTime">04:30:31</div>
+                    <span class="dot"><span class="dot-in"></span></span>
+                </div>
             </div>
-        </header>
-
-        <!-- MAIN -->
-        <main id="main">
-            <div class="common-inner">
-                <!-- visual -->
-                <section id="visual" class="sc-visual">
-                    <h2 class="blind">비주얼 영역</h2>
-                    <div class="title pc">
-                        <div class="row row1">
-                            <strong>creative</strong> <span class="txt-small">web</span>
+            <nav class="gnb">
+                <ul>
+                    <li><a href="#scAbout">About Me</a></li>
+                    <li><a href="#scMain">Main Project</a></li>
+                    <li><a href="#scSide">Side Project</a></li>
+                    <li><a href="#scJavascript">JS</a></li>
+                    <li><a href="#scIntro">Go TOP</a></li>
+                </ul>
+            </nav>
+            <div class="m-gnb-wrap">
+                <div class="m-gnb">
+                    <button class="open" aria-expanded="true">
+                        <div class="btn menu">
+                            <span>Menu</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 16" fill="none">
+                                <path d="M2 5H18" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M2 11H18" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
                         </div>
-                        <div class="row row2">
-                            <div class="thumb">
-                                <strong>publisher</strong>
-                            </div>
+                        <div class="btn close">
+                            <span>Close</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 16" fill="none">
+                                <path d="M5.00098 3.00098L15.001 13.001" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M5.00098 12.999L15.001 2.99902" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
                         </div>
-                        <div class="row row3">
-                            <span class="txt-small">i'm</span> <strong>ready</strong>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- about -->
-                <section id="about" class="sc-about">
-                    <h2 class="blind">소개 영역</h2>
-                    <div class="about-content">
-                        <p class="desc ko">
-                            '잘 만든 웹사이트를 만들고자 하는 욕심!!!!'<br>
-                            단순히 페이지를 구현하는 것에 그치는 것이 아니라 웹 표준, 웹
-                            접근성, 그리고 웹 호환성 등을 고려하여 마크업 하는 웹
-                            퍼블리셔가 되고자 합니다. 책임감을 가지고 임하며 맡은 바에
-                            있어서 항상 최선을 다할 것을 약속드립니다.
-                        </p>
-                        <a href="#" class="btn-scroll btn" role="button">scroll down</a>
-                    </div>
-                </section>
-            </div>
-        </main>
-
-        <!-- FOOTER -->
-        <footer id="footer">
-            <div class="common-inner">
-                <div class="group-row">
-                    <p class="copyright">
-                        <i class="ico-logo"></i> <em class="copyright-symbol">©</em> 
-                        <span class="year">2025</span>
-                    </p>
-                    <a href="mailto:gpwlsms14@gmail.com" class="link-contact btn">
-                        let's get in touch
+                    </button>
+                    <a href="#scIntro" class="talk">
+                        <span>Go TOP</span>
                     </a>
-                    <div class="social-area">
-                        <a href="https://github.com/me-gee" target="_blank" rel="noreferrer" class="link-social btn">
-                            github
-                        </a>
-                        <a href="https://blog.naver.com/me_gee" target="_blank" rel="noreferrer" class="link-social btn">
-                            velog
-                        </a>
-                    </div>
                 </div>
             </div>
-        </footer>
-    </div>
-
-    <script src="./assets/js/custom.js"></script>
+            <div class="open-menu">
+                <ul class="m-menu-list">
+                    <li class="m-menu-item">
+                        <a href="#scAbout">
+                            <span>About Me</span>
+                            <i> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none"> <path d="M3.25 0.5L8.75 6L3.25 11.5" stroke="white"></path> </svg> </i>
+                        </a>
+                    </li>
+                    <li class="m-menu-item">
+                        <a href="#scMain">
+                            <span>Main Project</span>
+                            <i> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none"> <path d="M3.25 0.5L8.75 6L3.25 11.5" stroke="white"></path> </svg> </i>
+                        </a>
+                    </li>
+                    <li class="m-menu-item">
+                        <a href="#scSide">
+                            <span>Side Project</span>
+                            <i> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none"> <path d="M3.25 0.5L8.75 6L3.25 11.5" stroke="white"></path> </svg> </i>
+                        </a>
+                    </li>
+                    <li class="m-menu-item">
+                        <a href="#scJavascript">
+                            <span>JavaScript</span>
+                            <i> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" fill="none"> <path d="M3.25 0.5L8.75 6L3.25 11.5" stroke="white"></path> </svg> </i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </header>
 </body>
 </html>
