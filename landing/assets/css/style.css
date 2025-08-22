@@ -1,1 +1,12 @@
-body{background-color:#ff0;font-family:"Arial",sans-serif;color:#000;line-height:1.6}.header{background:linear-gradient(135deg, #ff0000 0%, #00ff00 100%);color:#fff;padding:1rem 0}.header .logo{font-size:1.5rem;font-weight:bold;text-decoration:none;color:#fff}.header .logo:hover{opacity:.8}/*# sourceMappingURL=style.css.map */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    background-color: #f0f0f0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
