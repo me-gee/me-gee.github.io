@@ -4,10 +4,11 @@
   "description": "HYEJI Portfolio with SCSS",
   "main": "index.html",
   "scripts": {
-    "build": "sass assets/scss/style.scss assets/css/style.css --style compressed",
-    "watch": "sass assets/scss/style.scss assets/css/style.css --watch",
-    "dev": "sass assets/scss/style.scss assets/css/style.css --watch --style expanded",
-    "deploy": "npm run build && git add . && git commit -m 'Update portfolio' && git push origin main"
+    "build": "sass assets/css/style.scss assets/css/style.css --style compressed",
+    "watch": "sass assets/css/style.scss assets/css/style.css --watch",
+    "dev": "sass assets/css/style.scss assets/css/style.css --watch --style expanded",
+    "deploy": "npm run build && git add . && git commit -m 'Auto-update portfolio' && git push origin main",
+    "auto": "npm run build && git add . && git commit -m 'Auto-update: $(date)' && git push origin main"
   },
   "keywords": ["portfolio", "scss", "frontend"],
   "author": "HYEJI",
